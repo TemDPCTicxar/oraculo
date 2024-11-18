@@ -21,7 +21,8 @@
     "lib": [
       "ES2022",
       "dom"
-    ]
+    ],
+    "resolveJsonModule": true,   // Habilitar la resolución de módulos JSON
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

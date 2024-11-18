@@ -1,0 +1,90 @@
+<div class="min-h-screen flex items-center justify-center bg-gray-100 px-4">
+  <div class="max-w-sm w-full bg-white rounded-lg shadow-md p-5 mx-auto">
+    <!-- Encabezado -->
+    <h2 class="text-xl font-bold text-center text-gray-800 mb-3">Regístrate</h2>
+    <p class="text-xs text-center text-gray-500 mb-5">Crea tu cuenta de Oráculo</p>
+
+    <!-- Formulario -->
+    <form (ngSubmit)="onSubmit()" [formGroup]="registerForm" class="space-y-3">
+      <!-- Campo de Nombres -->
+      <div>
+        <input
+          type="text"
+          formControlName="firstName"
+          class="w-full px-3 py-2 border rounded focus:ring focus:ring-blue-300"
+          placeholder="Nombres"
+        />
+        <div *ngIf="registerForm.get('firstName')?.invalid && registerForm.get('firstName')?.touched" class="text-red-500 text-xs">
+          Este campo es obligatorio
+        </div>
+      </div>
+
+      <!-- Campo de Apellidos -->
+      <div>
+        <input
+          type="text"
+          formControlName="lastName"
+          class="w-full px-3 py-2 border rounded focus:ring focus:ring-blue-300"
+          placeholder="Apellidos"
+        />
+        <div *ngIf="registerForm.get('lastName')?.invalid && registerForm.get('lastName')?.touched" class="text-red-500 text-xs">
+          Este campo es obligatorio
+        </div>
+      </div>
+
+      <!-- Campo de Correo -->
+      <div>
+        <input
+          type="email"
+          formControlName="email"
+          class="w-full px-3 py-2 border rounded focus:ring focus:ring-blue-300"
+          placeholder="Correo Electrónico"
+        />
+        <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched" class="text-red-500 text-xs">
+          Correo inválido
+        </div>
+      </div>
+
+      <!-- Campo de Teléfono -->
+      <div>
+        <input
+          type="tel"
+          formControlName="phone"
+          class="w-full px-3 py-2 border rounded focus:ring focus:ring-blue-300"
+          placeholder="Teléfono"
+        />
+        <div *ngIf="registerForm.get('phone')?.invalid && registerForm.get('phone')?.touched" class="text-red-500 text-xs">
+          Ingresa un número válido
+        </div>
+      </div>
+
+      <!-- Campo de Contraseña -->
+      <div>
+        <input
+          type="password"
+          formControlName="password"
+          class="w-full px-3 py-2 border rounded focus:ring focus:ring-blue-300"
+          placeholder="Contraseña"
+        />
+        <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched" class="text-red-500 text-xs">
+          La contraseña debe tener al menos 6 caracteres
+        </div>
+      </div>
+
+      <!-- Botón de Registro -->
+      <button
+        type="submit"
+        class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 focus:ring focus:ring-blue-300"
+        [disabled]="registerForm.invalid"
+      >
+        Registrarse
+      </button>
+    </form>
+
+    <!-- Enlace para Login -->
+    <p class="mt-4 text-center text-xs text-gray-600">
+      ¿Ya tienes una cuenta?
+      <a href="login" class="text-blue-600 hover:underline">Inicia sesión</a>
+    </p>
+  </div>
+</div>

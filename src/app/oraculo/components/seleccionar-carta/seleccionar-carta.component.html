@@ -1,0 +1,128 @@
+<div class="min-h-screen flex flex-col bg-gray-100">
+  <!-- Encabezado -->
+  <header class="bg-[#0085C8] text-white py-3 shadow-md flex justify-between items-center px-4">
+    <!-- Icono de regresar -->
+    <a href="/dashboard" class="text-white text-2xl hover:text-gray-300">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+      </svg>
+    </a>
+    <!-- Título -->
+    <h1 class="text-center text-xl font-bold">Oráculo</h1>
+    <!-- Icono de ayuda -->
+    <a href="/ayuda" class="text-white text-2xl hover:text-gray-300">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M12 18h.01M12 6h.01M12 12h.01M12 9h.01M12 15h.01M3 12c0 4.97 4.03 9 9 9s9-4.03 9-9S16.97 3 12 3 3 7.03 3 12z">
+        </path>
+      </svg>
+    </a>
+  </header>
+
+  <!-- Contenido del formulario -->
+  <div class="flex-grow container mx-auto py-4 px-2">
+    <h2 class="text-md font-bold text-gray-700 text-center mb-4">Selecciona las cartas</h2>
+
+    <!-- Contenedor de opciones -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <!-- Carta 1 -->
+      <label class="flex flex-col items-center">
+        <input type="radio" name="carta" class="form-radio text-[#0085C8] h-4 w-4 mb-2" />
+        <img src="/assets/img/carta_back.png" alt="Carta" class="w-14 h-20 object-cover rounded-lg shadow" />
+      </label>
+
+      <!-- Carta 2 -->
+      <label class="flex flex-col items-center">
+        <input type="radio" name="carta" class="form-radio text-[#0085C8] h-4 w-4 mb-2" />
+        <div class="flex gap-1">
+          <img src="/assets/img/carta_back.png" alt="Carta" class="w-14 h-20 object-cover rounded-lg shadow" />
+          <img src="/assets/img/carta_back.png" alt="Carta" class="w-14 h-20 object-cover rounded-lg shadow" />
+        </div>
+      </label>
+
+      <!-- Carta 3 -->
+      <label class="flex flex-col items-center">
+        <input type="radio" name="carta" class="form-radio text-[#0085C8] h-4 w-4 mb-2" />
+        <div class="flex gap-1">
+          <img src="/assets/img/carta_back.png" alt="Carta" class="w-14 h-20 object-cover rounded-lg shadow" />
+          <img src="/assets/img/carta_back.png" alt="Carta" class="w-14 h-20 object-cover rounded-lg shadow" />
+          <img src="/assets/img/carta_back.png" alt="Carta" class="w-14 h-20 object-cover rounded-lg shadow" />
+        </div>
+      </label>
+
+      <!-- Carta 4 -->
+      <label class="flex flex-col items-center">
+        <input type="radio" name="carta" class="form-radio text-[#0085C8] h-4 w-4 mb-2" />
+        <div class="flex gap-1">
+          <img src="/assets/img/carta_back.png" alt="Carta" class="w-14 h-20 object-cover rounded-lg shadow" />
+          <img src="/assets/img/carta_back.png" alt="Carta" class="w-14 h-20 object-cover rounded-lg shadow" />
+          <img src="/assets/img/carta_back.png" alt="Carta" class="w-14 h-20 object-cover rounded-lg shadow" />
+          <img src="/assets/img/carta_back.png" alt="Carta" class="w-14 h-20 object-cover rounded-lg shadow" />
+        </div>
+      </label>
+
+      <!-- Carta 5 -->
+      <label class="flex flex-col items-center">
+        <input type="radio" name="carta" class="form-radio text-[#0085C8] h-4 w-4 mb-2" />
+        <div class="grid grid-cols-5 gap-1">
+          <img src="/assets/img/carta_back.png" alt="Carta" class="w-14 h-20 object-cover rounded-lg shadow" />
+          <img src="/assets/img/carta_back.png" alt="Carta" class="w-14 h-20 object-cover rounded-lg shadow" />
+          <img src="/assets/img/carta_back.png" alt="Carta" class="w-14 h-20 object-cover rounded-lg shadow" />
+          <img src="/assets/img/carta_back.png" alt="Carta" class="w-14 h-20 object-cover rounded-lg shadow" />
+          <img src="/assets/img/carta_back.png" alt="Carta" class="w-14 h-20 object-cover rounded-lg shadow" />
+        </div>
+      </label>
+
+      <label class="flex flex-col items-center">
+        <input type="radio" name="carta" class="form-radio text-[#0085C8] h-4 w-4 mb-2" />
+        <div class="relative w-20 h-20">
+          <!-- Generar 11 cartas apiladas -->
+          <img src="/assets/img/carta_back.png" alt="Carta"
+            class="absolute top-0 left-0 w-14 h-20 object-cover rounded-lg shadow"
+            style="z-index: 11; transform: translateX(10px)" />
+          <img src="/assets/img/carta_back.png" alt="Carta"
+            class="absolute top-0 left-0 w-14 h-20 object-cover rounded-lg shadow"
+            style="z-index: 10; transform: translateX(8px)" />
+          <img src="/assets/img/carta_back.png" alt="Carta"
+            class="absolute top-0 left-0 w-14 h-20 object-cover rounded-lg shadow"
+            style="z-index: 9; transform: translateX(6px)" />
+          <img src="/assets/img/carta_back.png" alt="Carta"
+            class="absolute top-0 left-0 w-14 h-20 object-cover rounded-lg shadow"
+            style="z-index: 8; transform: translateX(4px)" />
+          <img src="/assets/img/carta_back.png" alt="Carta"
+            class="absolute top-0 left-0 w-14 h-20 object-cover rounded-lg shadow"
+            style="z-index: 7; transform: translateX(2px)" />
+          <img src="/assets/img/carta_back.png" alt="Carta"
+            class="absolute top-0 left-0 w-14 h-20 object-cover rounded-lg shadow" style="z-index: 6" />
+          <img src="/assets/img/carta_back.png" alt="Carta"
+            class="absolute top-0 left-0 w-14 h-20 object-cover rounded-lg shadow"
+            style="z-index: 5; transform: translateX(-2px)" />
+          <img src="/assets/img/carta_back.png" alt="Carta"
+            class="absolute top-0 left-0 w-14 h-20 object-cover rounded-lg shadow"
+            style="z-index: 4; transform: translateX(-4px)" />
+          <img src="/assets/img/carta_back.png" alt="Carta"
+            class="absolute top-0 left-0 w-14 h-20 object-cover rounded-lg shadow"
+            style="z-index: 3; transform: translateX(-6px)" />
+          <img src="/assets/img/carta_back.png" alt="Carta"
+            class="absolute top-0 left-0 w-14 h-20 object-cover rounded-lg shadow"
+            style="z-index: 2; transform: translateX(-8px)" />
+          <img src="/assets/img/carta_back.png" alt="Carta"
+            class="absolute top-0 left-0 w-14 h-20 object-cover rounded-lg shadow"
+            style="z-index: 1; transform: translateX(-10px)" />
+        </div>
+      </label>
+    </div>
+
+    <!-- Botón de continuar -->
+    <div class="text-center mt-6">
+      <button class="bg-[#0085C8] text-white py-2 px-4 rounded-lg shadow hover:bg-[#006f99]">
+        Continuar
+      </button>
+    </div>
+  </div>
+
+  <!-- Footer fijo al fondo -->
+  <footer class="bg-gray-200 text-center py-3 mt-4">
+    <p class="text-xs text-gray-600">© 2024 Oráculo. Todos los derechos reservados.</p>
+  </footer>
+</div>
