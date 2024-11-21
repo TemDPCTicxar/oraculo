@@ -4,12 +4,16 @@ import { AuthService } from '../../../core/Services/AuthService';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 
+// import * as data from '../../../../../data.json'
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
 })
 export class LoginComponent {
   loginForm: FormGroup;
+
+  // cards = (data as any).default
 
   constructor(private fb: FormBuilder, private authService: AuthService,
     private router: Router) {
@@ -49,6 +53,10 @@ export class LoginComponent {
           });
         }
       });
-    }
+    } 
   }
+
+  // addCards(){
+  //   this.authService.addCards(this.cards);
+  // }
 }

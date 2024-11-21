@@ -1,267 +1,310 @@
 [
 	{
-	  "id": 1,
-	  "nombre": "1.png",
-	  "url": "assets/img/carta/",
-	  "lectura": "lectura numero 1"
+		"id": 1,
+		"nombre": "1.png",
+		"path": "1.png",
+		"url": "assets/img/carta/",
+		"lectura": "lectura numero 1"
 	},
 	{
-	  "id": 2,
-	  "nombre": "2.png",
-	  "url": "assets/img/carta/",
-	  "lectura": "lectura numero 2"
+		"id": 2,
+		"nombre": "2.png",
+		"path": "2.png",
+		"url": "assets/img/carta/",
+		"lectura": "lectura numero 2"
 	},
 	{
-	  "id": 3,
-	  "nombre": "3.png",
-	  "url": "assets/img/carta/",
-	  "lectura": "lectura numero 3"
+		"id": 3,
+		"nombre": "3.png",
+		"path": "3.png",
+		"url": "assets/img/carta/",
+		"lectura": "lectura numero 3"
 	},
 	{
-	  "id": 4,
-	  "nombre": "4.png",
-	  "url": "assets/img/carta/",
-	  "lectura": "lectura numero 4"
+		"id": 4,
+		"nombre": "4.png",
+		"path": "4.png",
+		"url": "assets/img/carta/",
+		"lectura": "lectura numero 4"
 	},
 	{
-	  "id": 5,
-	  "nombre": "5.png",
-	  "url": "assets/img/carta/",
-	  "lectura": "lectura numero 5"
+		"id": 5,
+		"nombre": "5.png",
+		"path": "5.png",
+		"url": "assets/img/carta/",
+		"lectura": "lectura numero 5"
 	},
 	{
-	  "id": 6,
-	  "nombre": "6.png",
-	  "url": "assets/img/carta/",
-	  "lectura": "lectura numero 6"
+		"id": 6,
+		"nombre": "6.png",
+		"path": "6.png",
+		"url": "assets/img/carta/",
+		"lectura": "lectura numero 6"
 	},
 	{
-	  "id": 7,
-	  "nombre": "7.png",
-	  "url": "assets/img/carta/",
-	  "lectura": "lectura numero 7"
+		"id": 7,
+		"nombre": "7.png",
+		"path": "7.png",
+		"url": "assets/img/carta/",
+		"lectura": "lectura numero 7"
 	},
 	{
-	  "id": 8,
-	  "nombre": "8.png",
-	  "url": "assets/img/carta/",
-	  "lectura": "lectura numero 8"
+		"id": 8,
+		"nombre": "8.png",
+		"path": "8.png",
+		"url": "assets/img/carta/",
+		"lectura": "lectura numero 8"
 	},
 	{
-	  "id": 9,
-	  "nombre": "9.png",
-	  "url": "assets/img/carta/",
-	  "lectura": "lectura numero 9"
+		"id": 9,
+		"nombre": "9.png",
+		"path": "9.png",
+		"url": "assets/img/carta/",
+		"lectura": "lectura numero 9"
 	},
 	{
-	  "id": 10,
-	  "nombre": "10.png",
-	  "url": "assets/img/carta/",
-	  "lectura": "lectura numero 10"
+		"id": 10,
+		"nombre": "10.png",
+		"path": "10.png",
+		"url": "assets/img/carta/",
+		"lectura": "lectura numero 10"
 	},
 	{
-	  "id": 11,
-	  "nombre": "11.png",
-	  "url": "assets/img/carta/",
-	  "lectura": "lectura numero 11"
+		"id": 11,
+		"nombre": "11.png",
+		"path": "11.png",
+		"url": "assets/img/carta/",
+		"lectura": "lectura numero 11"
 	},
 	{
-	  "id": 12,
-	  "nombre": "12.png",
-	  "url": "assets/img/carta/",
-	  "lectura": "lectura numero 12"
+		"id": 12,
+		"nombre": "12.png",
+		"path": "12.png",
+		"url": "assets/img/carta/",
+		"lectura": "lectura numero 12"
 	},
 	{
-	  "id": 13,
-	  "nombre": "13.png",
-	  "url": "assets/img/carta/",
-	  "lectura": "lectura numero 13"
+		"id": 13,
+		"nombre": "13.png",
+		"path": "13.png",
+		"url": "assets/img/carta/",
+		"lectura": "lectura numero 13"
 	},
 	{
-	  "id": 14,
-	  "nombre": "14.png",
-	  "url": "assets/img/carta/",
-	  "lectura": "lectura numero 14"
+		"id": 14,
+		"nombre": "14.png",
+		"path": "14.png",
+		"url": "assets/img/carta/",
+		"lectura": "lectura numero 14"
 	},
 	{
-	  "id": 15,
-	  "nombre": "15.png",
-	  "url": "assets/img/carta/",
-	  "lectura": "lectura numero 15"
+		"id": 15,
+		"nombre": "15.png",
+		"path": "15.png",
+		"url": "assets/img/carta/",
+		"lectura": "lectura numero 15"
 	},
 	{
-	  "id": 16,
-	  "nombre": "16.png",
-	  "url": "assets/img/carta/",
-	  "lectura": "lectura numero 16"
+		"id": 16,
+		"nombre": "16.png",
+		"path": "16.png",
+		"url": "assets/img/carta/",
+		"lectura": "lectura numero 16"
 	},
 	{
-	  "id": 17,
-	  "nombre": "17.png",
-	  "url": "assets/img/carta/",
-	  "lectura": "lectura numero 17"
+		"id": 17,
+		"nombre": "17.png",
+		"path": "17.png",
+		"url": "assets/img/carta/",
+		"lectura": "lectura numero 17"
 	},
 	{
-	  "id": 18,
-	  "nombre": "18.png",
-	  "url": "assets/img/carta/",
-	  "lectura": "lectura numero 18"
+		"id": 18,
+		"nombre": "18.png",
+		"path": "18.png",
+		"url": "assets/img/carta/",
+		"lectura": "lectura numero 18"
 	},
 	{
-	  "id": 19,
-	  "nombre": "19.png",
-	  "url": "assets/img/carta/",
-	  "lectura": "lectura numero 19"
+		"id": 19,
+		"nombre": "19.png",
+		"path": "19.png",
+		"url": "assets/img/carta/",
+		"lectura": "lectura numero 19"
 	},
 	{
-	  "id": 20,
-	  "nombre": "20.png",
-	  "url": "assets/img/carta/",
-	  "lectura": "lectura numero 20"
+		"id": 20,
+		"nombre": "20.png",
+		"path": "20.png",
+		"url": "assets/img/carta/",
+		"lectura": "lectura numero 20"
 	},
 	{
-	  "id": 21,
-	  "nombre": "21.png",
-	  "url": "assets/img/carta/",
-	  "lectura": "lectura numero 21"
+		"id": 21,
+		"nombre": "21.png",
+		"path": "21.png",
+		"url": "assets/img/carta/",
+		"lectura": "lectura numero 21"
 	},
 	{
-	  "id": 22,
-	  "nombre": "22.png",
-	  "url": "assets/img/carta/",
-	  "lectura": "lectura numero 22"
+		"id": 22,
+		"nombre": "22.png",
+		"path": "22.png",
+		"url": "assets/img/carta/",
+		"lectura": "lectura numero 22"
 	},
 	{
-	  "id": 23,
-	  "nombre": "23.png",
-	  "url": "assets/img/carta/",
-	  "lectura": "lectura numero 23"
+		"id": 23,
+		"nombre": "23.png",
+		"path": "23.png",
+		"url": "assets/img/carta/",
+		"lectura": "lectura numero 23"
 	},
 	{
-	  "id": 24,
-	  "nombre": "24.png",
-	  "url": "assets/img/carta/",
-	  "lectura": "lectura numero 24"
+		"id": 24,
+		"nombre": "24.png",
+		"path": "24.png",
+		"url": "assets/img/carta/",
+		"lectura": "lectura numero 24"
 	},
 	{
-	  "id": 25,
-	  "nombre": "25.png",
-	  "url": "assets/img/carta/",
-	  "lectura": "lectura numero 25"
+		"id": 25,
+		"nombre": "25.png",
+		"path": "25.png",
+		"url": "assets/img/carta/",
+		"lectura": "lectura numero 25"
 	},
 	{
-	  "id": 26,
-	  "nombre": "26.png",
-	  "url": "assets/img/carta/",
-	  "lectura": "lectura numero 26"
+		"id": 26,
+		"nombre": "26.png",
+		"path": "26.png",
+		"url": "assets/img/carta/",
+		"lectura": "lectura numero 26"
 	},
 	{
-	  "id": 27,
-	  "nombre": "27.png",
-	  "url": "assets/img/carta/",
-	  "lectura": "lectura numero 27"
+		"id": 27,
+		"nombre": "27.png",
+		"path": "27.png",
+		"url": "assets/img/carta/",
+		"lectura": "lectura numero 27"
 	},
 	{
-	  "id": 28,
-	  "nombre": "28.png",
-	  "url": "assets/img/carta/",
-	  "lectura": "lectura numero 28"
+		"id": 28,
+		"nombre": "28.png",
+		"path": "28.png",
+		"url": "assets/img/carta/",
+		"lectura": "lectura numero 28"
 	},
 	{
-	  "id": 29,
-	  "nombre": "29.png",
-	  "url": "assets/img/carta/",
-	  "lectura": "lectura numero 29"
+		"id": 29,
+		"nombre": "29.png",
+		"path": "29.png",
+		"url": "assets/img/carta/",
+		"lectura": "lectura numero 29"
 	},
 	{
-	  "id": 30,
-	  "nombre": "30.png",
-	  "url": "assets/img/carta/",
-	  "lectura": "lectura numero 30"
+		"id": 30,
+		"nombre": "30.png",
+		"path": "30.png",
+		"url": "assets/img/carta/",
+		"lectura": "lectura numero 30"
 	},
 	{
-	  "id": 31,
-	  "nombre": "31.png",
-	  "url": "assets/img/carta/",
-	  "lectura": "lectura numero 31"
+		"id": 31,
+		"nombre": "31.png",
+		"path": "31.png",
+		"url": "assets/img/carta/",
+		"lectura": "lectura numero 31"
 	},
 	{
-	  "id": 32,
-	  "nombre": "32.png",
-	  "url": "assets/img/carta/",
-	  "lectura": "lectura numero 32"
+		"id": 32,
+		"nombre": "32.png",
+		"path": "32.png",
+		"url": "assets/img/carta/",
+		"lectura": "lectura numero 32"
 	},
 	{
-	  "id": 33,
-	  "nombre": "33.png",
-	  "url": "assets/img/carta/",
-	  "lectura": "lectura numero 33"
+		"id": 33,
+		"nombre": "33.png",
+		"path": "33.png",
+		"url": "assets/img/carta/",
+		"lectura": "lectura numero 33"
 	},
 	{
-	  "id": 34,
-	  "nombre": "34.png",
-	  "url": "assets/img/carta/",
-	  "lectura": "lectura numero 34"
+		"id": 34,
+		"nombre": "34.png",
+		"path": "34.png",
+		"url": "assets/img/carta/",
+		"lectura": "lectura numero 34"
 	},
 	{
-	  "id": 35,
-	  "nombre": "35.png",
-	  "url": "assets/img/carta/",
-	  "lectura": "lectura numero 35"
+		"id": 35,
+		"nombre": "35.png",
+		"path": "35.png",
+		"url": "assets/img/carta/",
+		"lectura": "lectura numero 35"
 	},
 	{
-	  "id": 36,
-	  "nombre": "36.png",
-	  "url": "assets/img/carta/",
-	  "lectura": "lectura numero 36"
+		"id": 36,
+		"nombre": "36.png",
+		"path": "36.png",
+		"url": "assets/img/carta/",
+		"lectura": "lectura numero 36"
 	},
 	{
-	  "id": 37,
-	  "nombre": "37.png",
-	  "url": "assets/img/carta/",
-	  "lectura": "lectura numero 37"
+		"id": 37,
+		"nombre": "37.png",
+		"path": "37.png",
+		"url": "assets/img/carta/",
+		"lectura": "lectura numero 37"
 	},
 	{
-	  "id": 38,
-	  "nombre": "38.png",
-	  "url": "assets/img/carta/",
-	  "lectura": "lectura numero 38"
+		"id": 38,
+		"nombre": "38.png",
+		"path": "38.png",
+		"url": "assets/img/carta/",
+		"lectura": "lectura numero 38"
 	},
 	{
-	  "id": 39,
-	  "nombre": "39.png",
-	  "url": "assets/img/carta/",
-	  "lectura": "lectura numero 39"
+		"id": 39,
+		"nombre": "39.png",
+		"path": "39.png",
+		"url": "assets/img/carta/",
+		"lectura": "lectura numero 39"
 	},
 	{
-	  "id": 40,
-	  "nombre": "40.png",
-	  "url": "assets/img/carta/",
-	  "lectura": "lectura numero 40"
+		"id": 40,
+		"nombre": "40.png",
+		"path": "40.png",
+		"url": "assets/img/carta/",
+		"lectura": "lectura numero 40"
 	},
 	{
-	  "id": 41,
-	  "nombre": "41.png",
-	  "url": "assets/img/carta/",
-	  "lectura": "lectura numero 41"
+		"id": 41,
+		"nombre": "41.png",
+		"path": "41.png",
+		"url": "assets/img/carta/",
+		"lectura": "lectura numero 41"
 	},
 	{
-	  "id": 42,
-	  "nombre": "42.png",
-	  "url": "assets/img/carta/",
-	  "lectura": "lectura numero 42"
+		"id": 42,
+		"nombre": "42.png",
+		"path": "42.png",
+		"url": "assets/img/carta/",
+		"lectura": "lectura numero 42"
 	},
 	{
-	  "id": 43,
-	  "nombre": "43.png",
-	  "url": "assets/img/carta/",
-	  "lectura": "lectura numero 43"
+		"id": 43,
+		"nombre": "43.png",
+		"path": "43.png",
+		"url": "assets/img/carta/",
+		"lectura": "lectura numero 43"
 	},
 	{
-	  "id": 44,
-	  "nombre": "44.png",
-	  "url": "assets/img/carta/",
-	  "lectura": "lectura numero 44"
+		"id": 44,
+		"nombre": "44.png",
+		"path": "44.png",
+		"url": "assets/img/carta/",
+		"lectura": "lectura numero 44"
 	}
-  ]
-  
+]

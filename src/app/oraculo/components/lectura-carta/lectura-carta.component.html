@@ -1,0 +1,164 @@
+<div class="min-h-screen flex flex-col bg-gray-100" style="background-image: url('assets/img/fondo.jpg');">
+  <!-- Encabezado -->
+  <header class="bg-[#0085C8] text-white py-3 shadow-md flex justify-between items-center px-4">
+    <a href="/carta" class="text-white text-2xl hover:text-gray-300">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+      </svg>
+    </a>
+    <h1 class="text-center text-xl font-bold">Lectura de Cartas</h1>
+    <div></div>
+  </header>
+
+  <!-- Contenido -->
+  <div class="flex-grow container mx-auto py-4 px-2">
+    <h2 class="text-md font-bold text-gray-700 text-center mb-4">
+      Tu lectura de {{ numCartas }} carta(s)
+    </h2>
+
+    <!-- Mostrar cartas seleccionadas -->
+    <div class="flex justify-center gap-6 flex-wrap">
+
+      <!-- Si el usuario eligió 1 carta -->
+      <div *ngIf="cartasSeleccionadas.length === 1" class="flex justify-center">
+        <div class="bg-white p-4 rounded-lg shadow-md text-center cursor-pointer">
+          <img [src]="cartasSeleccionadas[0].url + cartasSeleccionadas[0].path || '/assets/img/carta_back.png'"
+            alt="Imagen de la carta" class="mx-auto mb-2 w-32 h-44 object-cover rounded-lg shadow-sm"
+            (click)="abrirModal(cartasSeleccionadas[0])" />
+          <p class="text-gray-700 font-medium">{{ cartasSeleccionadas[0].nombre }}</p>
+        </div>
+      </div>
+
+      <!-- Si el usuario eligió 2 cartas -->
+      <div *ngIf="cartasSeleccionadas.length === 2" class="grid grid-cols-2 gap-6">
+        <div *ngFor="let carta of cartasSeleccionadas"
+          class="bg-white p-4 rounded-lg shadow-md text-center cursor-pointer">
+          <img [src]="carta.url + carta.path || '/assets/img/carta_back.png'" alt="Imagen de la carta"
+            class="mx-auto mb-2 w-32 h-44 object-cover rounded-lg shadow-sm" (click)="abrirModal(carta)" />
+          <p class="text-gray-700 font-medium">{{ carta.nombre }}</p>
+        </div>
+      </div>
+
+      <!-- Si el usuario eligió 3 cartas -->
+      <div *ngIf="cartasSeleccionadas.length === 3" class="flex flex-col items-center gap-6">
+        <div class="bg-white p-4 rounded-lg shadow-md text-center cursor-pointer">
+          <img [src]="cartasSeleccionadas[0].url + cartasSeleccionadas[0].path || '/assets/img/carta_back.png'"
+            alt="Imagen de la carta" class="mx-auto mb-2 w-32 h-44 object-cover rounded-lg shadow-sm"
+            (click)="abrirModal(cartasSeleccionadas[0])" />
+          <p class="text-gray-700 font-medium">{{ cartasSeleccionadas[0].nombre }}</p>
+        </div>
+        <div class="flex gap-6">
+          <div *ngFor="let carta of cartasSeleccionadas.slice(1, 3)"
+            class="bg-white p-4 rounded-lg shadow-md text-center cursor-pointer">
+            <img [src]="carta.url + carta.path || '/assets/img/carta_back.png'" alt="Imagen de la carta"
+              class="mx-auto mb-2 w-32 h-44 object-cover rounded-lg shadow-sm" (click)="abrirModal(carta)" />
+            <p class="text-gray-700 font-medium">{{ carta.nombre }}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Si el usuario eligió 4 cartas -->
+      <div *ngIf="cartasSeleccionadas.length === 4" class="flex flex-col items-center gap-6">
+        <div class="bg-white p-4 rounded-lg shadow-md text-center cursor-pointer mb-6">
+          <img [src]="cartasSeleccionadas[0].url + cartasSeleccionadas[0].path || '/assets/img/carta_back.png'"
+            alt="Imagen de la carta" class="mx-auto mb-2 w-32 h-44 object-cover rounded-lg shadow-sm"
+            (click)="abrirModal(cartasSeleccionadas[0])" />
+          <p class="text-gray-700 font-medium">{{ cartasSeleccionadas[0].nombre }}</p>
+        </div>
+        <div class="flex gap-6 mb-6">
+          <div *ngFor="let carta of cartasSeleccionadas.slice(1, 3)"
+            class="bg-white p-4 rounded-lg shadow-md text-center cursor-pointer">
+            <img [src]="carta.url + carta.path || '/assets/img/carta_back.png'" alt="Imagen de la carta"
+              class="mx-auto mb-2 w-32 h-44 object-cover rounded-lg shadow-sm" (click)="abrirModal(carta)" />
+            <p class="text-gray-700 font-medium">{{ carta.nombre }}</p>
+          </div>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow-md text-center cursor-pointer">
+          <img [src]="cartasSeleccionadas[3].url + cartasSeleccionadas[3].path || '/assets/img/carta_back.png'"
+            alt="Imagen de la carta" class="mx-auto mb-2 w-32 h-44 object-cover rounded-lg shadow-sm"
+            (click)="abrirModal(cartasSeleccionadas[3])" />
+          <p class="text-gray-700 font-medium">{{ cartasSeleccionadas[3].nombre }}</p>
+        </div>
+      </div>
+
+      <!-- Si el usuario eligió 5 cartas -->
+      <div *ngIf="cartasSeleccionadas.length === 5" class="flex flex-col items-center gap-6">
+        <div class="bg-white p-4 rounded-lg shadow-md text-center mb-6">
+          <img [src]="cartasSeleccionadas[0].url + cartasSeleccionadas[0].path || '/assets/img/carta_back.png'"
+            alt="Imagen de la carta" class="mx-auto mb-2 w-32 h-44 object-cover rounded-lg shadow-sm"
+            (click)="abrirModal(cartasSeleccionadas[0])" />
+          <p class="text-gray-700 font-medium">{{ cartasSeleccionadas[0].nombre }}</p>
+        </div>
+        <div class="flex gap-6 mb-6">
+          <div *ngFor="let carta of cartasSeleccionadas.slice(1, 3)"
+            class="bg-white p-4 rounded-lg shadow-md text-center cursor-pointer">
+            <img [src]="carta.url + carta.path || '/assets/img/carta_back.png'" alt="Imagen de la carta"
+              class="mx-auto mb-2 w-32 h-44 object-cover rounded-lg shadow-sm" (click)="abrirModal(carta)" />
+            <p class="text-gray-700 font-medium">{{ carta.nombre }}</p>
+          </div>
+        </div>
+        <div class="flex gap-6">
+          <div *ngFor="let carta of cartasSeleccionadas.slice(3, 5)"
+            class="bg-white p-4 rounded-lg shadow-md text-center cursor-pointer">
+            <img [src]="carta.url + carta.path || '/assets/img/carta_back.png'" alt="Imagen de la carta"
+              class="mx-auto mb-2 w-32 h-44 object-cover rounded-lg shadow-sm" (click)="abrirModal(carta)" />
+            <p class="text-gray-700 font-medium">{{ carta.nombre }}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Si el usuario eligió 11 cartas -->
+      <div *ngIf="cartasSeleccionadas.length === 11" class="flex flex-col items-center gap-6">
+        <!-- Carta superior -->
+        <div class="bg-white p-4 rounded-lg shadow-md text-center mb-6">
+          <img [src]="cartasSeleccionadas[0].url + cartasSeleccionadas[0].path || '/assets/img/carta_back.png'"
+            alt="Imagen de la carta" class="mx-auto mb-2 w-32 h-44 object-cover rounded-lg shadow-sm"
+            (click)="abrirModal(cartasSeleccionadas[0])" />
+          <p class="text-gray-700 font-medium">{{ cartasSeleccionadas[0].nombre }}</p>
+        </div>
+
+        <!-- Dos filas con dos cartas abajo -->
+        <div class="flex gap-6 mb-6">
+          <div *ngFor="let carta of cartasSeleccionadas.slice(1, 3)"
+            class="bg-white p-4 rounded-lg shadow-md text-center cursor-pointer">
+            <img [src]="carta.url + carta.path || '/assets/img/carta_back.png'" alt="Imagen de la carta"
+              class="mx-auto mb-2 w-32 h-44 object-cover rounded-lg shadow-sm" (click)="abrirModal(carta)" />
+            <p class="text-gray-700 font-medium">{{ carta.nombre }}</p>
+          </div>
+        </div>
+
+        <div class="flex gap-6 mb-6">
+          <div *ngFor="let carta of cartasSeleccionadas.slice(3, 5)"
+            class="bg-white p-4 rounded-lg shadow-md text-center cursor-pointer">
+            <img [src]="carta.url + carta.path || '/assets/img/carta_back.png'" alt="Imagen de la carta"
+              class="mx-auto mb-2 w-32 h-44 object-cover rounded-lg shadow-sm" (click)="abrirModal(carta)" />
+            <p class="text-gray-700 font-medium">{{ carta.nombre }}</p>
+          </div>
+        </div>
+
+        <!-- Las 3 cartas restantes en una fila -->
+        <div class="flex gap-6">
+          <div *ngFor="let carta of cartasSeleccionadas.slice(5, 8)"
+            class="bg-white p-4 rounded-lg shadow-md text-center cursor-pointer">
+            <img [src]="carta.url + carta.path || '/assets/img/carta_back.png'" alt="Imagen de la carta"
+              class="mx-auto mb-2 w-32 h-44 object-cover rounded-lg shadow-sm" (click)="abrirModal(carta)" />
+            <p class="text-gray-700 font-medium">{{ carta.nombre }}</p>
+          </div>
+        </div>
+
+        <div class="flex gap-6">
+          <div *ngFor="let carta of cartasSeleccionadas.slice(8, 11)"
+            class="bg-white p-4 rounded-lg shadow-md text-center cursor-pointer">
+            <img [src]="carta.url + carta.path || '/assets/img/carta_back.png'" alt="Imagen de la carta"
+              class="mx-auto mb-2 w-32 h-44 object-cover rounded-lg shadow-sm" (click)="abrirModal(carta)" />
+            <p class="text-gray-700 font-medium">{{ carta.nombre }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Footer fijo al fondo -->
+  <footer class="bg-gray-200/80 text-center py-3 mt-4">
+    <p class="text-xs text-gray-600">© 2024 Oráculo. Todos los derechos reservados.</p>
+  </footer>
+</div>

@@ -13,11 +13,9 @@ export const routes: Routes = [
     loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
   },
   {
-    path: 'selecciona-carta',
+    path: 'carta',
     canActivate: [AuthGuard],
     loadChildren: () => import('./oraculo/oraculo.module').then(m => m.OraculoModule)
   },
-
-  { path: '**', redirectTo: 'login' }
+  { path: '**', redirectTo: 'login' },
 ];
-

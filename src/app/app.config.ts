@@ -9,6 +9,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { environment } from '../environments/environment';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './core/Interceptors/auth.interceptor';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 export const appConfig: ApplicationConfig = {
   providers: [provideRouter(routes), provideClientHydration(),
@@ -21,6 +22,6 @@ export const appConfig: ApplicationConfig = {
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,
     multi: true // Asegura que se agregue al array de interceptores
-  }
+  }, provideAnimationsAsync()
   ]
 };

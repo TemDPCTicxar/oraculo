@@ -1,6 +1,6 @@
-<div class="min-h-screen flex flex-col bg-gray-100">
+<div class="min-h-screen flex flex-col bg-cover bg-center" style="background-image: url('assets/img/fondo.jpg');">
   <!-- Encabezado -->
-  <header class="bg-[#0085C8] text-white py-4 shadow-md flex justify-between items-center px-6">
+  <header class="bg-[#0085C8]/90 text-white py-4 shadow-md flex justify-between items-center px-6">
     <h1 class="text-center text-2xl font-bold">Oráculo</h1>
 
     <!-- Icono de Cerrar sesión (SVG) -->
@@ -24,14 +24,14 @@
 
   <!-- Contenido del Dashboard -->
   <div class="flex-grow container mx-auto py-8 px-6">
-    <h2 class="text-2xl font-semibold text-gray-800 mb-6">Bienvenido, {{userName}}</h2>
+    <h2 class="text-2xl font-semibold text-white mb-6">Bienvenido, {{userName}}</h2>
 
     <!-- Opciones del Dashboard -->
     <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
       <!-- Opción: Nueva Lectura -->
       <a
-        routerLink="/selecciona-carta"
-        class="block p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow hover:bg-blue-50 text-center"
+        routerLink="/carta"
+        class="block p-6 bg-white/80 backdrop-blur-md rounded-lg shadow-lg hover:shadow-xl transition-shadow hover:bg-blue-100/90 text-center"
       >
         <div class="text-[#0085C8] text-4xl mb-4">
           <i class="fas fa-book"></i>
@@ -43,7 +43,7 @@
       <!-- Opción: Historial de Lectura -->
       <a
         routerLink="/dashboard/historial-lectura"
-        class="block p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow hover:bg-blue-50 text-center"
+        class="block p-6 bg-white/80 backdrop-blur-md rounded-lg shadow-lg hover:shadow-xl transition-shadow hover:bg-blue-100/90 text-center"
       >
         <div class="text-[#0085C8] text-4xl mb-4">
           <i class="fas fa-history"></i>
@@ -55,8 +55,7 @@
   </div>
 
   <!-- Footer fijo al fondo -->
-  <footer class="bg-gray-200 text-center py-6 mt-6">
+  <footer class="bg-gray-200/80 text-center py-6">
     <p class="text-sm text-gray-600">© 2024 Oráculo. Todos los derechos reservados.</p>
   </footer>
-
 </div>
