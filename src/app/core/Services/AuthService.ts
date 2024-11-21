@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { catchError, from, Observable, switchMap } from 'rxjs';
+import { catchError, finalize, from, Observable, switchMap } from 'rxjs';
+import { LoadingService } from './LoadingService';
 
 @Injectable({
   providedIn: 'root',
@@ -10,7 +11,8 @@ export class AuthService {
 
   constructor(
     private afAuth: AngularFireAuth,
-    private firestore: AngularFirestore
+    private firestore: AngularFirestore,
+    private loadingService: LoadingService
   ) { }
 
 
@@ -28,6 +30,7 @@ export class AuthService {
 
   // Obtener información del usuario autenticado
   getCurrentUser(): Observable<any> {
+    this.loadingService.setLoading(true);
     return this.afAuth.authState.pipe(
       switchMap(user => {
         if (user) {
@@ -35,7 +38,8 @@ export class AuthService {
         } else {
           return new Observable<any>(); // Si no hay usuario, devuelve un Observable vacío
         }
-      })
+      }),
+      finalize(() => this.loadingService.setLoading(false))
     );
   }
 
@@ -51,6 +55,7 @@ export class AuthService {
     phone: string,
     password: string
   ): Observable<void> {
+    this.loadingService.setLoading(true);
     return new Observable((observer) => {
       this.afAuth
         .createUserWithEmailAndPassword(email, password)
@@ -69,6 +74,7 @@ export class AuthService {
               .then(() => {
                 observer.next();
                 observer.complete();
+                this.loadingService.setLoading(false);
               })
               .catch((error) => {
                 observer.error(error);
@@ -83,17 +89,22 @@ export class AuthService {
 
   // Iniciar sesión de un usuario con email y contraseña
   login(email: string, password: string): Observable<any> {
+    this.loadingService.setLoading(false)
     return from(this.afAuth.signInWithEmailAndPassword(email, password)).pipe(
       catchError(error => {
         // Captura y maneja el error, si ocurre alguno
         throw new Error(error.message);
-      })
+      }),
+      finalize(() => this.loadingService.setLoading(false))
     );
   }
 
   // Método para cerrar sesión
   logout(): Observable<void> {
-    return from(this.afAuth.signOut());
+    this.loadingService.setLoading(false)
+    return from(this.afAuth.signOut()).pipe(
+      finalize(() => this.loadingService.setLoading(false))
+    );
   }
 
 }

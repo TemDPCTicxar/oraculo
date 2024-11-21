@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { CartaModalComponent } from './carta-modal/carta-modal.component';
+import { LoadingService } from '../../../core/Services/LoadingService';
 
 @Component({
   selector: 'app-lectura-cartas',
@@ -16,7 +17,7 @@ export class LecturaCartasComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private firestore: AngularFirestore,
-    public dialog: MatDialog
+    public dialog: MatDialog, private loadingService: LoadingService
   ) {}
 
   ngOnInit(): void {
@@ -29,16 +30,22 @@ export class LecturaCartasComponent implements OnInit {
 
   // Obtener cartas aleatorias desde Firestore
   obtenerCartasAleatorias(): void {
+    this.loadingService.setLoading(true); // Mostrar el spinner al comenzar la operación
     this.firestore
       .collection('cards')
       .valueChanges()
-      .subscribe((cartas: any[]) => {
-        this.cartasSeleccionadas = this.seleccionarAleatorias(
-          cartas,
-          this.numCartas
-        );
+      .subscribe({
+        next: (cartas: any[]) => {
+          this.cartasSeleccionadas = this.seleccionarAleatorias(cartas, this.numCartas);
+          this.loadingService.setLoading(false); // Ocultar el spinner cuando se complete la operación
+        },
+        error: (err) => {
+          console.error('Error al obtener las cartas:', err);
+          this.loadingService.setLoading(false); // Asegúrate de ocultar el spinner en caso de error
+        }
       });
   }
+  
 
   // Función para seleccionar cartas aleatorias
   seleccionarAleatorias(cartas: any[], cantidad: number): any[] {

@@ -1,28 +1,4 @@
-<div class="min-h-screen flex flex-col bg-cover bg-center" style="background-image: url('assets/img/fondo.jpg');">
-  <!-- Encabezado -->
-  <header class="bg-[#0085C8]/90 text-white py-4 shadow-md flex justify-between items-center px-6">
-    <h1 class="text-center text-2xl font-bold">Oráculo</h1>
-
-    <!-- Icono de Cerrar sesión (SVG) -->
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      class="w-8 h-8 text-white cursor-pointer hover:text-gray-300 transition-colors duration-200"
-      (click)="logout()"
-      title="Cerrar sesión"
-    >
-      <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        d="M17 16l4-4m0 0l-4-4m4 4H3"
-      />
-    </svg>
-  </header>
-
-  <!-- Contenido del Dashboard -->
+ <!-- Contenido del Dashboard -->
   <div class="flex-grow container mx-auto py-8 px-6">
     <h2 class="text-2xl font-semibold text-white mb-6">Bienvenido, {{userName}}</h2>
 
@@ -53,9 +29,3 @@
       </a>
     </div>
   </div>
-
-  <!-- Footer fijo al fondo -->
-  <footer class="bg-gray-200/80 text-center py-6">
-    <p class="text-sm text-gray-600">© 2024 Oráculo. Todos los derechos reservados.</p>
-  </footer>
-</div>
