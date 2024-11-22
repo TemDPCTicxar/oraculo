@@ -1,0 +1,28 @@
+header {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: sticky; /* Mantiene el header fijo si se desea */
+  top: 0;
+  z-index: 10;
+}
+
+h1 {
+  font-family: 'Poppins', sans-serif; /* Fuente ligera y profesional */
+  font-size: 0.875rem; /* Tamaño ajustado para pantallas móviles */
+  color: #e0e0e0;
+}
+
+img {
+  transition: transform 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.1);
+}
+
+button#menu-button {
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+button#menu-button:hover {
+  transform: rotate(10deg);
+}

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { CartaModalComponent } from './carta-modal/carta-modal.component';
 import { LoadingService } from '../../../core/Services/LoadingService';
@@ -17,7 +17,8 @@ export class LecturaCartasComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private firestore: AngularFirestore,
-    public dialog: MatDialog, private loadingService: LoadingService
+    public dialog: MatDialog, private loadingService: LoadingService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -60,4 +61,9 @@ export class LecturaCartasComponent implements OnInit {
       data: { carta },
     });
   }
+
+  navigateToCarta() {
+    this.router.navigate(['/carta']);
+  }
+
 }

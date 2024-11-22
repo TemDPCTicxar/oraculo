@@ -10,7 +10,7 @@ import Swal from 'sweetalert2';
 export class SeleccionarCartaComponent {
   selectedCards: number[] = []; // IDs de las cartas seleccionadas
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   onCardSelect(cardId: number, event: any) {
     if (event.target.checked) {
@@ -40,5 +40,9 @@ export class SeleccionarCartaComponent {
         confirmButtonColor: '#0085C8',
       });
     }
+  }
+
+  navigateToCarta() {
+    this.router.navigate(['/dashboard']);
   }
 }
