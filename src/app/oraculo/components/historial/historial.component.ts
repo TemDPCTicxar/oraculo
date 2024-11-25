@@ -29,10 +29,6 @@ export class HistorialComponent implements OnInit {
     });
   }
 
-  navigateToCarta() {
-    this.router.navigate(['/dashboard']);
-  }
-
   filtrarPorFecha() {
     if (this.fechaFiltro) {
       const fechaSeleccionada = new Date(this.fechaFiltro);
@@ -43,6 +39,10 @@ export class HistorialComponent implements OnInit {
     } else {
       this.cargarHistorial(); // Si no se selecciona fecha, se cargan todos los registros
     }
+  }
+
+  navigateToCarta() {
+    this.router.navigate(['/dashboard']);
   }
 }
 
