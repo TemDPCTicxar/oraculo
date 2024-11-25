@@ -1,0 +1,13 @@
+{
+    "resources": {
+      "icon": {
+        "backgroundColor": "#FFFFFF",
+        "foregroundImage": "resources/logo.png"
+      },
+      "splash": {
+        "backgroundColor": "#FFFFFF",
+        "foregroundImage": "resources/splash.png"
+      }
+    }
+  }
+  
