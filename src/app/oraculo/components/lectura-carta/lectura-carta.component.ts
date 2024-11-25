@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { CartaModalComponent } from './carta-modal/carta-modal.component';
 import { LoadingService } from '../../../core/Services/LoadingService';
+import { AuthService } from '../../../core/Services/AuthService';
 
 @Component({
   selector: 'app-lectura-cartas',
@@ -18,8 +19,9 @@ export class LecturaCartasComponent implements OnInit {
     private route: ActivatedRoute,
     private firestore: AngularFirestore,
     public dialog: MatDialog, private loadingService: LoadingService,
-    private router: Router
-  ) {}
+    private router: Router,
+    private authService: AuthService
+  ) { }
 
   ngOnInit(): void {
     // Obtener el número de cartas desde la URL
@@ -38,6 +40,7 @@ export class LecturaCartasComponent implements OnInit {
       .subscribe({
         next: (cartas: any[]) => {
           this.cartasSeleccionadas = this.seleccionarAleatorias(cartas, this.numCartas);
+          this.guardarLectura(this.cartasSeleccionadas);
           this.loadingService.setLoading(false); // Ocultar el spinner cuando se complete la operación
         },
         error: (err) => {
@@ -46,7 +49,22 @@ export class LecturaCartasComponent implements OnInit {
         }
       });
   }
-  
+
+  guardarLectura(cartasSeleccionadas: any[]): void {
+    const record = {
+      id: this.firestore.createId(),
+      numberCard: this.numCartas,
+      cartas: cartasSeleccionadas,
+    };
+    this.authService.registrarLectura(record).subscribe({
+      next: () => {
+        console.log('Registro guardado con éxito');
+      },
+      error: (error) => {
+        console.error('Error al guardar el registro:', error);
+      },
+    });
+  }
 
   // Función para seleccionar cartas aleatorias
   seleccionarAleatorias(cartas: any[], cantidad: number): any[] {

@@ -21,14 +21,14 @@ export class AppComponent {
 
   constructor(private router: Router) {
 
-    FirebaseAnalytics.logEvent({
-      name: 'app_started',  // Nombre del evento
-      params: {             // Propiedades del evento
-        platform: 'capacitor',
-      }
-    });
+    // FirebaseAnalytics.logEvent({
+    //   name: 'app_started',  // Nombre del evento
+    //   params: {             // Propiedades del evento
+    //     platform: 'capacitor',
+    //   }
+    // });
 
-    console.log("Firebase Analytics initialized!");
+    // console.log("Firebase Analytics initialized!");
   }
 
   isLoginOrRegister(): boolean {

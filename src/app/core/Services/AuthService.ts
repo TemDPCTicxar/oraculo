@@ -3,17 +3,19 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { catchError, finalize, from, Observable, switchMap, throwError, take } from 'rxjs';
 import { LoadingService } from './LoadingService';
+import { collection, query, where, getDocs } from '@firebase/firestore';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
+  registros: any[] = [];
 
   constructor(
     private afAuth: AngularFireAuth,
     private firestore: AngularFirestore,
     private loadingService: LoadingService
-  ) {}
+  ) { }
 
   addCards(cards: any[]): void {
     cards.forEach(card => {
@@ -70,12 +72,12 @@ export class AuthService {
               email,
               phone,
             })
-            .then(() => {
-              observer.next();
-              observer.complete();
-            })
-            .catch(error => observer.error(error))
-            .finally(() => this.loadingService.setLoading(false));
+              .then(() => {
+                observer.next();
+                observer.complete();
+              })
+              .catch(error => observer.error(error))
+              .finally(() => this.loadingService.setLoading(false));
           }
         })
         .catch(error => {
@@ -103,7 +105,10 @@ export class AuthService {
         console.error('Error al cerrar sesión:', error);
         return throwError(() => error);
       }),
-      finalize(() => this.loadingService.setLoading(false))
+      finalize(() => {
+        window.localStorage.removeItem("user");
+        this.loadingService.setLoading(false)
+      })
     );
   }
 
@@ -134,4 +139,93 @@ export class AuthService {
       finalize(() => this.loadingService.setLoading(false))
     );
   }
+
+  registrarLectura(record: any): Observable<void> {
+    this.loadingService.setLoading(true);
+
+    return this.afAuth.authState.pipe(
+      take(1),
+      switchMap((user: any) => {
+        if (!user) {
+          return throwError(() => new Error('No hay usuario autenticado.'));
+        }
+
+        console.log(user, "usuario ");
+
+        // Validar que user tiene un ID válido
+        if (!user.uid) {
+          return throwError(() => new Error('El usuario no tiene un ID válido.'));
+        }
+
+        // Completar los datos del registro
+        const timestamp = new Date(); // Fecha actual
+        const enrichedRecord = {
+          ...record,
+          userId: user.uid, // ID del usuario autenticado
+          timestar: timestamp.toISOString(), // Fecha del registro
+        };
+
+        // Validar que todos los datos requeridos están presentes
+        if (!enrichedRecord.userId || !enrichedRecord.numberCard || !enrichedRecord.cartas) {
+          return throwError(() => new Error('Datos incompletos en el registro.'));
+        }
+
+        // Guardar en Firestore
+        const recordId = this.firestore.createId(); // Generar un ID único
+        return from(this.firestore.collection('records').doc(recordId).set(enrichedRecord));
+      }),
+      catchError((error) => {
+        console.error('Error al registrar la lectura:', error);
+        return throwError(() => error);
+      }),
+      finalize(() => this.loadingService.setLoading(false))
+    );
+  }
+
+  cargarHistorial(): Observable<any[]> {
+    this.loadingService.setLoading(true);
+
+    return this.afAuth.authState.pipe(
+      take(1),
+      switchMap((user) => {
+        if (!user || !user.uid) {
+          return throwError(() => new Error('No hay usuario autenticado.'));
+        }
+
+        return from(
+          this.firestore
+            .collection('records', (ref) => ref.where('userId', '==', user.uid))
+            .get()
+            .toPromise()
+        ).pipe(
+          switchMap(async (querySnapshot: any) => {
+            if (querySnapshot.empty) {
+              throw new Error('No se encontraron registros.');
+            }
+
+            const registros = querySnapshot.docs.map((doc: any) => ({
+              id: doc.id,
+              ...doc.data(),
+            }));
+
+            return registros;
+          }),
+          catchError((error) => {
+            console.error('Error al cargar historial:', error);
+            return throwError(() => error);
+          }),
+          finalize(() => this.loadingService.setLoading(false))
+        );
+      })
+    );
+  }
+
+  /**
+   * Obtener registros almacenados localmente
+   */
+  getRegistros(): any[] {
+    return this.registros;
+  }
+
+
 }

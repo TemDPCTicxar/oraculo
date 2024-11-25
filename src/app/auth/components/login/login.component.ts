@@ -47,7 +47,7 @@ export class LoginComponent {
           console.error('Error al iniciar sesión: ', error);
           Swal.fire({
             title: 'Error',
-            text: 'Las credenciales proporcionadas son incorrectas. Por favor, inténtelo de nuevo.',
+            text: error,
             icon: 'error',
             confirmButtonText: 'Aceptar'
           });

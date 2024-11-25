@@ -1,0 +1,47 @@
+<div class="container mx-auto py-6 px-4">
+  <h2 class="text-xl font-bold text-gray-700 mb-4 flex justify-between items-center">
+    <!-- Icono a la derecha -->
+    <button (click)="navigateToCarta()"
+      class="bg-indigo-800 hover:bg-indigo-700 text-white rounded-full p-3 shadow-lg transition focus:outline-none focus:ring-4 focus:ring-indigo-500">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+        stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+      </svg>
+    </button>
+    
+    <!-- Texto centrado -->
+    <span class="flex-grow text-center">Historial de Lecturas</span>
+  </h2>
+
+  <!-- Filtro de búsqueda por fecha -->
+  <div class="mb-4 flex items-center justify-between">
+    <input type="date" [(ngModel)]="fechaFiltro" (ngModelChange)="filtrarPorFecha()"
+      class="border rounded-lg p-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+    <button (click)="filtrarPorFecha()" 
+      class="bg-indigo-800 text-white rounded-lg px-4 py-2 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+      Filtrar por fecha
+    </button>
+  </div>
+
+  <!-- Mostrar lista de registros -->
+  <div *ngFor="let registro of registros" class="bg-white p-4 rounded-lg shadow-md mb-4">
+    <div class="flex justify-between items-center mb-2">
+      <h3 class="text-lg font-semibold text-gray-700">Lectura de {{ registro.numberCard }} carta(s)</h3>
+      <p class="text-sm text-gray-500">{{ registro.timestar | date: 'medium' }}</p>
+    </div>
+
+    <!-- Mostrar las cartas -->
+    <div class="flex flex-wrap gap-4 mt-4">
+      <div *ngFor="let carta of registro.cartas" class="text-center">
+        <img [src]="carta.url + carta.path || '/assets/img/carta_back.png'" alt="Carta" 
+          class="w-24 h-36 object-cover rounded-lg shadow-md mb-2" />
+        <p class="text-sm text-gray-600 font-medium">{{ carta.nombre }}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mostrar mensaje si no hay registros -->
+  <div *ngIf="!registros.length" class="text-center text-gray-500">
+    No tienes lecturas guardadas.
+  </div>
+</div>

@@ -25,6 +25,7 @@
     "@angular/router": "^17.3.0",
     "@angular/ssr": "^17.3.9",
     "@capacitor-community/firebase-analytics": "^6.0.0",
+    "@capacitor-firebase/app": "^6.2.0",
     "@capacitor-firebase/authentication": "^6.2.0",
     "@capacitor-firebase/firestore": "^6.2.0",
     "@capacitor/android": "^6.2.0",

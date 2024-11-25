@@ -6,10 +6,11 @@ import { SeleccionarCartaComponent } from './components/seleccionar-carta/selecc
 import { LecturaCartasComponent } from './components/lectura-carta/lectura-carta.component';
 import { OraculoRoutingModule } from './oraculo.Routing.Module';
 import { CartaModalComponent } from './components/lectura-carta/carta-modal/carta-modal.component';
+import { HistorialComponent } from './components/historial/historial.component';
 
 @NgModule({
   declarations: [
-    SeleccionarCartaComponent, LecturaCartasComponent, CartaModalComponent
+    SeleccionarCartaComponent, LecturaCartasComponent, CartaModalComponent, HistorialComponent
   ],
   imports: [
     CommonModule,
