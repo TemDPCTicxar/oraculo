@@ -47,7 +47,7 @@ export class LoginComponent {
           console.error('Error al iniciar sesión: ', error);
           Swal.fire({
             title: 'Error',
-            text: error,
+            text: 'sus creadenciales no son validas',
             icon: 'error',
             confirmButtonText: 'Aceptar'
           });
